@@ -47,5 +47,18 @@ public class TestMerge {
 		System.out.println(testService.findPerson("ab72ec67-c1a4-4f9a-90d6-3142d75a7c04")
 				.getName());
 	}
+	
+	@Test
+	public void testTransactionReadOnly() {
+		ITestService testService = (ITestService) context.getBean("testService");
+		System.out.println(testService.findPerson("ab72ec67-c1a4-4f9a-90d6-3142d75a7c04")
+				.getName());
+	}
+	
+	@Test
+	public void testTransactionRollback() {
+		ITestService testService = (ITestService) context.getBean("testService");
+		testService.save(new Person("LLLl"));
+	}
 
 }

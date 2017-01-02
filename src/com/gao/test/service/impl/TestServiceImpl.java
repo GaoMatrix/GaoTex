@@ -23,11 +23,13 @@ public class TestServiceImpl implements ITestService {
 
 	@Override
 	public void save(Person person) {
+		int temp = 1/0; 
 		testDao.save(person);
 	}
 
 	@Override
 	public Person findPerson(Serializable id) {
+		save(new Person("GGG"));
 		return testDao.findPerson(id);
 	}
 
