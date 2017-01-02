@@ -39,5 +39,13 @@ public class TestMerge {
 		transaction.commit();
 		session.close();
 	}
+	
+	@Test
+	public void testServiceAndDao() {
+		ITestService testService = (ITestService) context.getBean("testService");
+//		testService.save(new Person("GaoMatrix"));
+		System.out.println(testService.findPerson("ab72ec67-c1a4-4f9a-90d6-3142d75a7c04")
+				.getName());
+	}
 
 }
