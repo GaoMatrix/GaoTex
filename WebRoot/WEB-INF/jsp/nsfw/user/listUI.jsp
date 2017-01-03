@@ -51,20 +51,20 @@
                             <td align="center">电子邮箱</td>
                             <td width="100" align="center">操作</td>
                         </tr>
-                        
-                            <tr bgcolor="f8f8f8">
-                                <td align="center"><input type="checkbox" name="selectedRow" value=""/></td>
-                                <td align="center">xxx</td>
-                                <td align="center"></td>
-                                <td align="center"></td>
-                                <td align="center"></td>
-                                <td align="center"></td>
+                        <s:iterator value="userList" status="st">
+                            <tr <s:if test="#st.odd">bgcolor="f8f8f8"</s:if> >
+                                <td align="center"><input type="checkbox" name="selectedRow" value="<s:property value='id' />"/></td>
+                                <td align="center"><s:property value="name"/></td>
+                                <td align="center"><s:property value="account"/></td>
+                                <td align="center"><s:property value="dept"/></td>
+                                <td align="center"><s:property value="gender?'男':'女'"/></td>
+                                <td align="center"><s:property value="email"/></td>
                                 <td align="center">
-                                    <a href="javascript:doEdit(id)">编辑</a>
-                                    <a href="javascript:doDelete(id)">删除</a>
+                                    <a href="javascript:doEdit('<s:property value='id' />')">编辑</a>
+                                    <a href="javascript:doDelete('<s:property value='id' />')">删除</a>
                                 </td>
                             </tr>
-                        
+                        </s:iterator>
                     </table>
                 </div>
             </div>

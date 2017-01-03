@@ -39,8 +39,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> findObjects() {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.findObjects();
 	}
 
 }
