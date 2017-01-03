@@ -1,12 +1,23 @@
 package com.gao.nsfw.user.action;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import com.gao.nsfw.user.entity.User;
+import com.gao.nsfw.user.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 
+
 public class UserAction extends ActionSupport{
+	@Resource
+	private UserService userService;
+	private User user;
+	private List<User> userList;
 	
 	// 列表页面
 	public String listUI() {
-		System.out.println("listUI");
+		userList = userService.findObjects();
 		return "listUI";
 	}
 	
@@ -17,6 +28,9 @@ public class UserAction extends ActionSupport{
 	
 	// 保存新增
 	public String add() {
+		if (null != user) {
+			userService.save(user);
+		}
 		return "list";
 	}
 	
@@ -38,5 +52,21 @@ public class UserAction extends ActionSupport{
 	// 批量删除
 	public String deleteSelected() {
 		return "list";
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public List<User> getUserList() {
+		return userList;
+	}
+	
+	public void setUserList(List<User> userList) {
+		this.userList = userList;
 	}
 }

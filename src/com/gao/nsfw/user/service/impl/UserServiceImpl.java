@@ -1,4 +1,4 @@
-package com.gao.nsfw.user.service;
+package com.gao.nsfw.user.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.gao.nsfw.user.dao.UserDao;
 import com.gao.nsfw.user.entity.User;
+import com.gao.nsfw.user.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {

@@ -12,6 +12,11 @@
 			//prop jquery 1.6+建议使用
 			$("input[name=selectedRow]").prop("checked", $("#selAll").is(":checked"));		
 		}
+		
+		function doAdd() {
+			document.forms[0].action = "${basePath}nsfw/user_addUI.action";
+			document.forms[0].submit();
+		}
     </script>
 </head>
 <body class="rightBody">

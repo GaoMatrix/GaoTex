@@ -8,6 +8,9 @@
 	<package name="user-action" namespace="/nsfw" extends="struts-default">
 		<action name="user_*" class="com.gao.nsfw.user.action.UserAction" method="{1}">
 			<result name="{1}">/WEB-INF/jsp/nsfw/user/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">user_listUI</param>
+			</result>
 		</action>
 	</package>
 
