@@ -17,6 +17,11 @@
 			document.forms[0].action = "${basePath}nsfw/user_addUI.action";
 			document.forms[0].submit();
 		}
+		
+		function doEdit(id) {
+			document.forms[0].action = "${basePath}nsfw/user_editUI.action?user.id=" + id;
+			document.forms[0].submit();
+		}
     </script>
 </head>
 <body class="rightBody">

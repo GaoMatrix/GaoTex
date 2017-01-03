@@ -41,6 +41,9 @@ public class UserAction extends ActionSupport{
 	
 	// 保存编辑
 	public String edit() {
+		if (null != user) {
+			userService.update(user);
+		}
 		return "list";
 	}
 	
