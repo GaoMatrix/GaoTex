@@ -49,7 +49,10 @@ public class UserAction extends ActionSupport{
 	
 	// 删除
 	public String delete() {
-		return "delete";
+		if(user != null && user.getId() != null){
+			userService.delete(user.getId());
+		}
+		return "list";
 	}
 	
 	// 批量删除

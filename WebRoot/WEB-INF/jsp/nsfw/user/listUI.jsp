@@ -12,14 +12,19 @@
 			//prop jquery 1.6+建议使用
 			$("input[name=selectedRow]").prop("checked", $("#selAll").is(":checked"));		
 		}
-		
+		// 添加
 		function doAdd() {
 			document.forms[0].action = "${basePath}nsfw/user_addUI.action";
 			document.forms[0].submit();
 		}
-		
+		// 编辑
 		function doEdit(id) {
 			document.forms[0].action = "${basePath}nsfw/user_editUI.action?user.id=" + id;
+			document.forms[0].submit();
+		}
+		// 删除
+		function doDelete(id) {
+			document.forms[0].action = "${basePath}nsfw/user_delete.action?user.id=" + id;
 			document.forms[0].submit();
 		}
     </script>
