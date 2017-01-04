@@ -27,6 +27,11 @@
 			document.forms[0].action = "${basePath}nsfw/user_delete.action?user.id=" + id;
 			document.forms[0].submit();
 		}
+		// 批量删除
+		function doDeleteAll(id) {
+			document.forms[0].action = "${basePath}nsfw/user_deleteSelected.action";
+			document.forms[0].submit();
+		}
     </script>
 </head>
 <body class="rightBody">
