@@ -22,6 +22,8 @@ public class RoleAction extends ActionSupport {
 
 	// 列表页面
 	public String listUI() {
+		// 加载权限集合
+				ActionContext.getContext().getContextMap().put("privilegeMap", Constant.PRIVILEGE_MAP);
 		roleList = roleService.findObjects();
 		return "listUI";
 	}
