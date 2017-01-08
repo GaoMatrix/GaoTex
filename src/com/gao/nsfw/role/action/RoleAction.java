@@ -51,6 +51,19 @@ public class RoleAction extends ActionSupport {
 
 	// 调转到编辑页面
 	public String editUI() {
+		// 加载权限集合
+		ActionContext.getContext().getContextMap().put("privilegeMap", Constant.PRIVILEGE_MAP);
+		if (role != null && role.getRoleId() != null) {
+			role = roleService.findObjectById(role.getRoleId());
+			// 处理角色权限，用于回显
+			if (role.getRolePrivileges() != null) {
+				privilegeIds = new String[role.getRolePrivileges().size()];
+				int i = 0;
+				for(RolePrivilege rolePrivilege : role.getRolePrivileges()) {
+					privilegeIds[i++] = rolePrivilege.getId().getCode();
+				}
+			}
+		}		
 		return "editUI";
 	}
 

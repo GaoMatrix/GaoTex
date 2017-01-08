@@ -24,6 +24,9 @@ public class RoleServiceImpl implements IRoleService {
 
 	@Override
 	public void update(Role role) {
+		// 1.删除该角色对应的所有权限
+		roleDao.deleteRolePrivilegeByRoleId(role.getRoleId());
+		// 2.更新角色及其权限
 		roleDao.update(role);
 	}
 
