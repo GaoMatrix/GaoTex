@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.gao.nsfw.user.entity.User;
 
-public interface UserService {
+public interface IUserService {
 	/**
 	 * 新增
 	 */

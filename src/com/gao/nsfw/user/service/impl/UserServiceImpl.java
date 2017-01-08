@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.gao.nsfw.user.dao.UserDao;
 import com.gao.nsfw.user.entity.User;
-import com.gao.nsfw.user.service.UserService;
+import com.gao.nsfw.user.service.IUserService;
 
 @Service("userService")
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
 	@Resource
 	private UserDao userDao;

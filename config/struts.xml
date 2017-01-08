@@ -16,6 +16,9 @@
 
 	<!-- 包含User用户管理的struts的配置文件 -->
 	<include file="com/gao/nsfw/user/conf/user-struts.xml"></include>
+	<!-- 包含Role的struts的配置文件 -->
+    <include file="com/gao/nsfw/role/conf/role-struts.xml"></include>
 	<!-- 包含test的struts的配置文件 -->
 	<include file="com/gao/test/conf/test-struts.xml"></include>
+
 </struts>

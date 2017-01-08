@@ -11,13 +11,13 @@ import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
 import com.gao.nsfw.user.entity.User;
-import com.gao.nsfw.user.service.UserService;
+import com.gao.nsfw.user.service.IUserService;
 import com.opensymphony.xwork2.ActionSupport;
 
 
 public class UserAction extends ActionSupport{
 	@Resource
-	private UserService userService;
+	private IUserService userService;
 	private User user;
 	private List<User> userList;
 	private String[] selectedRow;
